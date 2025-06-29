@@ -34,7 +34,7 @@ It learns what I learn
 Functions:
 all basic operators (+, -, *, /, %)
 formula based:
-    LCM, HCF, Interest, sin, cos, tan, cosec, sec, cotan, (more to be added)
+    SI, LCM, HCF, sin, cos, tan, cosec, sec, cotan, (more to be added)
 
 Geometrical shapes:
     area
@@ -54,3 +54,6 @@ Built on C++, cross platform, versions available for linux and window, I sadly d
 Resources:
 
 maths textbook, a teacher, music and vibe, and a spirnkle of dumbing things down and learning
+
+
+PROJECT IS ON HALT, WORKING ON SOMETHING ELSE
