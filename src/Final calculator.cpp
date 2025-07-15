@@ -1,7 +1,81 @@
 #include <iostream>
 #include <cmath>
 #include <bits/stdc++.h>
+#include <vector>
+#include <sstream>
 using namespace std;
+
+//                                                            MARKS AND GRADES
+
+void formatMarks() {
+  double ufMarks, totalMarks, outOf, toFormat, fMarks;
+  double sumMarks = 0;
+  cout<<"Enter your grades: ";
+  cin.ignore();
+  string grade;
+  getline(cin, grade);
+  cout<<"Out of how many marks were these scores?: ";
+  cin>>outOf;
+  cout<<"Out of how many do you want to format these?: ";
+  cin>>toFormat;
+  stringstream gradeSS(grade);
+  vector<double> gradeVector;
+
+// adding values to vector
+
+  while (gradeSS >> ufMarks) {
+    gradeVector.push_back(ufMarks);
+  }
+
+// Percentage
+
+  cout<<"Formatted Marks: ";
+  for (int i = 0; i < gradeVector.size(); i++) {
+    fMarks = gradeVector[i]*toFormat/outOf;
+    sumMarks = sumMarks + fMarks; //sum of all formatted marks
+    cout<<fMarks<<"/"<<toFormat<<" ";
+  }
+  
+// Average
+
+  totalMarks = toFormat*gradeVector.size();
+  double avgMarks = sumMarks*toFormat/totalMarks;
+  cout<<endl<<"Average: "<<avgMarks<<"/"<<toFormat<<endl<<endl;
+
+}
+void percentageAvg() {
+  double ufMarks, totalMarks, outOf;
+  double sumMarks = 0;
+  cout<<"Enter your grades: ";
+  string grade;
+  cin.ignore();
+  getline(cin, grade);
+  cout<<"Out of how many marks were these scores?: ";
+  cin>>outOf;
+  stringstream gradeSS(grade);
+  vector<double> gradeVector;
+
+// adding values to vector
+
+  while (gradeSS >> ufMarks) {
+    gradeVector.push_back(ufMarks);
+  }
+
+// Percentage
+
+  cout<<"Marks: ";
+  for (int i = 0; i < gradeVector.size(); i++) {
+    sumMarks = sumMarks + gradeVector[i]; //sum of all marks
+    cout<<gradeVector[i]*100/outOf<<" ";
+  }
+
+// Average
+
+  totalMarks = outOf*gradeVector.size();
+  double fMarks = sumMarks*100/totalMarks;
+  cout<<endl<<"Average: "<<fMarks<<endl<<endl;
+
+}
 void GPACalc() {
   cout<<"Enter scores: ";
 
@@ -66,19 +140,22 @@ do {
     cout<<"      ██╔══╝   ██╔██╗ ██║╚════██║   ██║   ██╔══╝  ██║╚██╗██║██║     ██╔══╝"<<endl;
     cout<<"      ███████╗██╔╝ ██╗██║███████║   ██║   ███████╗██║ ╚████║╚██████╗███████╗"<<endl;
     cout<<"      ╚══════╝╚═╝  ╚═╝╚═╝╚══════╝   ╚═╝   ╚══════╝╚═╝  ╚═══╝ ╚═════╝╚══════╝"<<endl <<endl;
-        cout <<"Choose an options"<<endl<<"||  Shape (S)  ||  Calculations (C)  || Academics (A)"<<endl;
+        cout <<"Choose an option"<<endl<<"||  Shape (S)  ||  Calculations (C)  || Academics (A)";
         cin >> choice;
 
 //                                              Academic
 
 if (choice =="A" || choice == "a") {
-  cout<<"What do you want to calculate?"<<endl<<"GPA (G)"<<endl<<"Format Marks (eg: 36/40 -> 90% and/or 4.5/5)";
+  cout<<"What do you want to calculate? || GPA (G) || Format Marks (eg: 36/40 -> 90% and/or 4.5/5) (F) || Percentage & Average (P): ";
   cin>>op;
   if (op == "G" || op == "g" || op == "GPA" || op == "gpa" || op == "Gpa") {
     GPACalc();
   }
   else if (op == "F" || op == "f") { //TODO: Add more
-    cout<<endl<<"Under Developements, sorry";
+    formatMarks();
+  }
+  else if (op == "p" || op == "P" || op == "percentage" || op == "average") {
+    percentageAvg();
   }
 }
 //                                           Calculations
