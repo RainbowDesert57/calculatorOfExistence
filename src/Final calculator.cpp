@@ -2,6 +2,24 @@
 #include <cmath>
 #include <bits/stdc++.h>
 using namespace std;
+void GPACalc() {
+  cout<<"Enter scores: ";
+
+  string gpaInput;
+  getline(cin, gpaInput);
+  stringstream gpaSS(gpaInput);
+  vector<double> gpaVector;
+  int x;
+  while (gpaSS >> x) {
+    gpaVector.push_back(x);
+  }
+  double sum = 0;
+  for (int i = 0; i < gpaVector.size(); i++) {
+    sum = sum + gpaVector[i];
+  }
+  double GPA = sum/gpaVector.size();
+  cout<<GPA;
+}
     void simplify(int x, int y)
 {
     int g = __gcd(x, y);
@@ -48,44 +66,59 @@ do {
     cout<<"      ██╔══╝   ██╔██╗ ██║╚════██║   ██║   ██╔══╝  ██║╚██╗██║██║     ██╔══╝"<<endl;
     cout<<"      ███████╗██╔╝ ██╗██║███████║   ██║   ███████╗██║ ╚████║╚██████╗███████╗"<<endl;
     cout<<"      ╚══════╝╚═╝  ╚═╝╚═╝╚══════╝   ╚═╝   ╚══════╝╚═╝  ╚═══╝ ╚═════╝╚══════╝"<<endl <<endl;
-        cout <<"Choose an operation"<<endl<<"||  Shape (S)  ||  Calculations (C)  ||"<<endl;
+        cout <<"Choose an options"<<endl<<"||  Shape (S)  ||  Calculations (C)  || Academics (A)"<<endl;
         cin >> choice;
 
-            if (choice == "C" || choice == "c")
-        {
+//                                              Academic
+
+if (choice =="A" || choice == "a") {
+  cout<<"What do you want to calculate?"<<endl<<"GPA (G)"<<endl<<"Format Marks (eg: 36/40 -> 90% and/or 4.5/5)";
+  cin>>op;
+  if (op == "G" || op == "g" || op == "GPA" || op == "gpa" || op == "Gpa") {
+    GPACalc();
+  }
+  else if (op == "F" || op == "f") { //TODO: Add more
+    cout<<endl<<"Under Developements, sorry";
+  }
+}
+//                                           Calculations
+if (choice == "C" || choice == "c")
+{
         cout <<"enter your operation (+, -, *, /, %of, SI): ";
         cin >> op;
-                if (op == "+" || op == "-" || op == "*" || op == "%of" || op == "/")
-            {
-    cout <<"enter your first number: ";
-    cin >> a;
-    double c = a/100;
-    cout <<"enter your second number: ";
-    cin >> b; 
-        if (op == "+")
-    {
+  if (op == "+" || op == "-" || op == "*" || op == "%of" || op == "/")
+  {
+      cout <<"enter your first number: ";
+      cin >> a;
+      double c = a/100;
+      cout <<"enter your second number: ";
+      cin >> b;
+      if (op == "+")
+      {
         cout <<"answer: " <<a+b <<'\n';
-    
-    }
-        else if (op == "-")
-    { 
+      }
+      else if (op == "-")
+      { 
         cout <<"answer: " <<a-b <<'\n';
-    }
-        else if (op == "*")
-    { 
+      }
+      else if (op == "*")
+      { 
         cout <<"answer: " <<a*b <<'\n';
-    }
-        else if (op == "/")
-    { 
+      }
+      else if (op == "/")
+      { 
         cout <<"answer: " <<a/b <<'\n';
-    }
-         else if (op == "%of")
-    {
-        cout <<"answer: " <<(a*100)/b <<"%" <<'\n';          //percentage = a*100
-    }                                                        //            ------
-            }                                                //               b
-        else if (op == "SI" || op == "si")
-    { 
+      }
+      else if (op == "%of")
+      {
+        cout <<"answer: " <<(a*100)/b <<"%" <<'\n';
+      }
+      else {
+        cout<<"Not a recognised operation";
+       }
+  }
+  else if (op == "SI" || op == "si")
+  { 
             double p, r, t;
             cout <<"enter Principal: ";
             cin >>p;
@@ -94,13 +127,14 @@ do {
             cout <<"enter Time Period: ";
             cin >>t;
             cout <<"The Interest is: "<<(p*r*t)/100 <<'\n';
-    }
-        else
-    {
+  }
+  else
+  {
             cout <<"not a recognised operation" <<'\n';
-    }
-        }
-            else if (choice == "S" || choice == "s")
+  }
+}
+//                                              Geometry
+else if (choice == "S" || choice == "s")
     {
         cout <<"what do you want to calculate? (Area || Volume || Perimeter || Sine || Cose || Tangent || Cosec || Sec || Cotan): " <<"\n";
         cin >>op;
@@ -345,14 +379,11 @@ do {
 {
     cout <<"\n" <<"not a recognized Operation!" <<"\n";
 }
-    }
-        //Repeat Prompt
-     cout <<'\n' <<"To repeat, press (y | Y)\nTo exit, press ( x | X ): "; 
-     cin  >> again;
+}
+  cout<<endl<<"To repeat, press (y | Y)\nTo exit, press ( x | X ): "; 
+  cin>>again;
 } while (again == "y" || again == "Y");
-    //repeat command
     return 0;
-
 }
 
 

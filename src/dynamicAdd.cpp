@@ -3,8 +3,8 @@
 #include <sstream>
 #include <string>
 using namespace std;
-int main() {
-  cout<<"Enter numbers to add: ";
+void GPACalc() {
+  cout<<"Enter scores: ";
 
   string gpaInput;
   getline(cin, gpaInput);
@@ -20,4 +20,7 @@ int main() {
   }
   double GPA = sum/gpaVector.size();
   cout<<GPA;
+}
+int main() {
+  GPACalc();
 }
