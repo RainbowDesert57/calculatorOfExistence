@@ -36,30 +36,31 @@
 Functions:
 all basic operators (+, -, *, /, %)
 formula based:
-    SI, LCM, HCF, sin, cos, tan, cosec, sec, cotan, (more to be added)
+    - SI, LCM, HCF, sin, cos, tan, cosec, sec, cotan, (more to be added)
 
 Geometrical shapes:
-    area
-    parameter
-    volume
-    surface area
-    curved surface area
+    - area
+    - parameter
+    - volume
+    - surface area
+    - curved surface area
 
 Academic Calculator:
-    gpa calculation
-    grade average
-    grades to perrcentage
-    grades for one denominator to another (eg: 36/40 => 72/80)
+    - gpa calculation
+    - grade average
+    - grades to perrcentage
+    - grades for one denominator to another (eg: 36/40 => 72/80)
     
 Currently working on:
-    grade required for goal
-    report card maker for getting total marks using weighted assesments
-    improving the HCF LCM function
-    adding zen calculator, type the equation and you will get the answer, no need to navigate to the equation or operator
-    improving the welcome screen using ascii
+    - grade required for goal
+    - report card maker for getting total marks using weighted assesments
+    - improving the HCF LCM function
+    - adding zen calculator, type the equation and you will get the answer, no need to navigate to the equation or operator
+    - improving the welcome screen using ascii
 
 future goals:
-    adding a TUI
+    - adding a TUI
+
 Built on C++, cross platform, versions available for linux and window, I sadly dont have a mac, but will try to keep up to date for that in future
 
 Resources:
