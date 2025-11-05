@@ -31,7 +31,7 @@
 - It has every formula I have learned
 - It learns what I learn
 - Does not crash out if you give it more than 2 or 3 variables or a string instead of a number
-- Uses sstring for dynamic calculations, ignores strings, and stores then in a vector so you can give as many ints as you want :)
+- Uses sstring for dynamic calculations, ignores strings, and stores them in a vector so you can give as many ints as you want :)
 
 Functions:
 all basic operators (+, -, *, /, %)
